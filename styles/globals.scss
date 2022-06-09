@@ -1,9 +1,29 @@
+@use "typography-variables";
+@use "@material/typography" with (
+  $font-family: typography-variables.$body-font,
+  $styles-headline1: map-get(typography-variables.$styles, headline1),
+  $styles-headline2: map-get(typography-variables.$styles, headline2),
+  $styles-headline3: map-get(typography-variables.$styles, headline3),
+  $styles-headline4: map-get(typography-variables.$styles, headline4),
+  $styles-headline5: map-get(typography-variables.$styles, headline5),
+  $styles-headline6: map-get(typography-variables.$styles, headline6),
+  $styles-body1: map-get(typography-variables.$styles, body1),
+  $styles-body2: map-get(typography-variables.$styles, body2),
+  $styles-subtitle1: map-get(typography-variables.$styles, subtitle1),
+  $styles-subtitle2: map-get(typography-variables.$styles, subtitle2),
+  $styles-button: map-get(typography-variables.$styles, button),
+  $styles-overline: map-get(typography-variables.$styles, overline),
+  $styles-caption: map-get(typography-variables.$styles, caption)
+);
+
+@import "normalize.css/normalize.css";
+
+@include typography.core-styles();
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
