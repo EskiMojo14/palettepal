@@ -1,5 +1,5 @@
 @use "@material/animation";
-@use "@material/theme";
+@use "@material/top-app-bar";
 @use "palette.module" as palette;
 @use "util";
 
@@ -10,7 +10,9 @@
   flex-direction: column;
   .app-bar {
     position: static;
-    background-color: util.map-deep-get(palette.$palette, red, 500);
+    @include top-app-bar.fill-color-accessible(
+      util.map-deep-get(palette.$palette, red, 500)
+    );
     animation: animation.standard(rainbow, 3000ms * length(palette.$palette))
       infinite;
   }
@@ -27,9 +29,7 @@
     $i: index(palette.$palette, $color $shades);
     $percent: 0% + ((($i - 1) / length(palette.$palette)) * 100);
     #{$percent} {
-      $ink-color: theme.accessible-ink-color(map-get($shades, 500));
-      background-color: map-get($shades, 500);
-      color: $ink-color;
+      @include top-app-bar.fill-color-accessible(map-get($shades, 500));
     }
   }
 }
