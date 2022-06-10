@@ -12,6 +12,10 @@
     opacity: 0.87;
   }
   .subtitle {
+    font-feature-settings: "lnum";
+    opacity: 0.6;
+  }
+  .overline {
     font-feature-settings: "tnum";
     opacity: 0.6;
   }

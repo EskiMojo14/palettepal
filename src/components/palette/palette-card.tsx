@@ -11,11 +11,14 @@ export type PaletteCardProps = {
 export const PaletteCard = ({ color, shade }: PaletteCardProps) => (
   <Ripple>
     <div className={`${styles["palette-card"]} ${color}-${shade}`}>
-      <Typography use="overline" className={styles.subtitle}>
+      <Typography use="overline" className={styles.overline}>
         {palette[color][shade]}
       </Typography>
       <Typography use="headline6" className={styles.title}>
-        {paletteNames[color]} {`${shade}`.toUpperCase()}
+        {paletteNames[color]}
+      </Typography>
+      <Typography use="subtitle1" className={styles.subtitle}>
+        {`${shade}`.toUpperCase()}
       </Typography>
     </div>
   </Ripple>
