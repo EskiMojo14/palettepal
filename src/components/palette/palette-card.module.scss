@@ -5,7 +5,7 @@
 .palette-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 16px;
   cursor: pointer;
   .title {
@@ -28,7 +28,7 @@
       padding: 16px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 }
