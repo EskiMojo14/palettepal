@@ -1,7 +1,7 @@
 $mdc-typography-font-family: unquote("Rubik, sans-serif");
 $heading-font: unquote("Roboto Serif, serif");
 $body-font: unquote("Rubik, sans-serif");
-$monospace: unquote("Noto Sans Mono, monospace");
+$monospace-font: unquote("Noto Sans Mono, monospace");
 
 @function toRem($px) {
   @return ($px / 16) * 1rem;
@@ -62,23 +62,23 @@ $styles: (
   ),
   monospace: (
     body1: (
-      font-family: unquote("Noto Sans Mono"),
+      font-family: $monospace-font,
       font-size: toRem(16),
     ),
     body2: (
-      font-family: unquote("Noto Sans Mono"),
+      font-family: $monospace-font,
       font-size: toRem(14),
     ),
     button: (
-      font-family: unquote("Noto Sans Mono"),
+      font-family: $monospace-font,
       font-size: toRem(14),
     ),
     overline: (
-      font-family: unquote("Noto Sans Mono"),
+      font-family: $monospace-font,
       font-size: toRem(10),
     ),
     caption: (
-      font-family: unquote("Noto Sans Mono"),
+      font-family: $monospace-font,
       font-size: toRem(12),
     ),
   ),

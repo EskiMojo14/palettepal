@@ -1,4 +1,7 @@
 @use "@material/ripple";
+@use "styles/typography-variables";
+@use "styles/util";
+
 .palette-card {
   display: flex;
   flex-direction: column;
@@ -6,9 +9,11 @@
   padding: 16px;
   .title {
     font-feature-settings: "lnum";
+    opacity: 0.87;
   }
   .subtitle {
-    font-feature-settings: "lnum";
+    font-feature-settings: "tnum";
+    opacity: 0.6;
   }
   &.wb {
     padding: 0;
