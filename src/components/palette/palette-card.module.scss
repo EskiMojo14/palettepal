@@ -10,10 +10,13 @@
   flex-direction: column;
   min-width: 0;
   cursor: pointer;
-  transition: elevation.transition-value();
+  z-index: 1;
+  transition: elevation.transition-value(),
+    z-index elevation.$transition-duration step-end;
   &:hover {
-    z-index: 9;
+    z-index: 3;
     @include elevation.elevation(4);
+    transition: elevation.transition-value();
   }
   .text-row {
     display: flex;
