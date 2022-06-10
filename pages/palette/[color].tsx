@@ -1,4 +1,13 @@
+import {
+  TopAppBar,
+  TopAppBarNavigationIcon,
+  TopAppBarRow,
+  TopAppBarSection,
+  TopAppBarTitle,
+} from "@rmwc/top-app-bar";
 import { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
+import Link from "next/link";
 import { paletteNames } from "../../src/palette";
 
 export const getStaticProps: GetStaticProps = (ctx) => ({
@@ -15,7 +24,21 @@ export type PaletteDisplayProps = {
 };
 
 export const PaletteDisplay = ({ color }: PaletteDisplayProps) => (
-  <div>{paletteNames[color]}</div>
+  <div>
+    <Head>
+      <title>PalettePal: {paletteNames[color]}</title>
+    </Head>
+    <TopAppBar className={`${color}-500`}>
+      <TopAppBarRow>
+        <TopAppBarSection alignStart>
+          <Link href="/">
+            <TopAppBarNavigationIcon icon="arrow_back" />
+          </Link>
+          <TopAppBarTitle>PalettePal: {paletteNames[color]}</TopAppBarTitle>
+        </TopAppBarSection>
+      </TopAppBarRow>
+    </TopAppBar>
+  </div>
 );
 
 export default PaletteDisplay;
