@@ -1,3 +1,4 @@
+@use "palette.module" as palette;
 @use "typography-variables";
 @use "@material/typography" with (
   $font-family: typography-variables.$body-font,
@@ -16,8 +17,12 @@
   $styles-caption: map-get(typography-variables.$styles, caption)
 );
 
+@use "@material/ripple";
+@use "@material/theme";
+
 @import "normalize.css/normalize.css";
 
+@include ripple.core-styles();
 @include typography.core-styles();
 
 html,
@@ -33,4 +38,25 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.black {
+  background-color: black;
+  color: white;
+}
+
+.white {
+  background-color: white;
+  color: black;
+}
+
+@each $color, $shades in palette.$palette {
+  @each $shade, $value in $shades {
+    $text-color: theme.accessible-ink-color($value);
+    .#{$color}-#{$shade} {
+      background-color: $value;
+      color: $text-color;
+      @include ripple.states($text-color);
+    }
+  }
 }
