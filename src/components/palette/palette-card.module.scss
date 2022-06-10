@@ -1,12 +1,20 @@
 @use "@material/animation";
+@use "@material/elevation";
 @use "@material/ripple";
+@use "@material/rtl";
 @use "styles/typography-variables";
 @use "styles/util";
 
 .palette-card {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   cursor: pointer;
+  transition: elevation.transition-value();
+  &:hover {
+    z-index: 9;
+    @include elevation.elevation(4);
+  }
   .text-row {
     display: flex;
     flex-direction: column;
@@ -17,14 +25,15 @@
     .title {
       font-feature-settings: "lnum";
       opacity: 0.87;
-    }
-    .subtitle {
-      font-feature-settings: "lnum";
-      opacity: 0.6;
+      @include rtl.reflexive-box(margin, right, auto);
     }
     .overline {
       font-feature-settings: "tnum";
       opacity: 0.6;
+    }
+    &.horizontal {
+      flex-direction: row;
+      align-items: center;
     }
   }
   .palette-row {
@@ -57,7 +66,7 @@
     }
   }
   &.wb {
-    cursor: default;
+    pointer-events: none;
     padding: 0;
     .half {
       flex: 1 1 50%;
