@@ -1,4 +1,6 @@
 @use "@material/animation";
+@use "@material/ripple";
+@use "@material/theme";
 @use "@material/top-app-bar";
 @use "palette.module" as palette;
 @use "util";
@@ -13,6 +15,18 @@
     @include top-app-bar.fill-color-accessible(
       util.map-deep-get(palette.$palette, red, 500)
     );
+    .app-bar-icon {
+      animation: animation.standard(
+          on-rainbow,
+          3000ms * length(palette.$palette)
+        )
+        infinite;
+      $color: theme.accessible-ink-color(
+        util.map-deep-get(palette.$palette, red, 500)
+      );
+      color: $color;
+      @include ripple.states($color);
+    }
     animation: animation.standard(rainbow, 3000ms * length(palette.$palette))
       infinite;
   }
@@ -30,6 +44,17 @@
     $percent: 0% + ((($i - 1) / length(palette.$palette)) * 100);
     #{$percent} {
       @include top-app-bar.fill-color-accessible(map-get($shades, 500));
+    }
+  }
+}
+
+@keyframes on-rainbow {
+  @each $color, $shades in palette.$palette {
+    $i: index(palette.$palette, $color $shades);
+    $percent: 0% + ((($i - 1) / length(palette.$palette)) * 100);
+    #{$percent} {
+      $color: theme.accessible-ink-color(map-get($shades, 500));
+      color: $color;
     }
   }
 }
