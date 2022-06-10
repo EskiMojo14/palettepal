@@ -1,5 +1,6 @@
 import {
   TopAppBar,
+  TopAppBarFixedAdjust,
   TopAppBarNavigationIcon,
   TopAppBarRow,
   TopAppBarSection,
@@ -36,7 +37,7 @@ export const PaletteDisplay = ({ color }: PaletteDisplayProps) => {
       <Head>
         <title>PalettePal: {paletteNames[color]}</title>
       </Head>
-      <TopAppBar className={`${styles["app-bar"]} ${color}-500`}>
+      <TopAppBar fixed className={`${styles["app-bar"]} ${color}-500`}>
         <TopAppBarRow>
           <TopAppBarSection alignStart>
             <Link href="/">
@@ -46,14 +47,14 @@ export const PaletteDisplay = ({ color }: PaletteDisplayProps) => {
           </TopAppBarSection>
         </TopAppBarRow>
       </TopAppBar>
-      <div
+      <TopAppBarFixedAdjust
         className={styles["palette-grid"]}
         style={{ "--grid-rows": shades.length } as CSSProperties}
       >
         {shades.map((shade) => (
           <PaletteCard key={shade} horizontal {...{ color, shade }} />
         ))}
-      </div>
+      </TopAppBarFixedAdjust>
     </div>
   );
 };

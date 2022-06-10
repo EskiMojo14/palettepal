@@ -1,4 +1,5 @@
 @use "@material/animation";
+@use "@material/elevation";
 @use "@material/ripple";
 @use "@material/theme";
 @use "@material/top-app-bar";
@@ -11,7 +12,7 @@
   display: flex;
   flex-direction: column;
   .app-bar {
-    position: static;
+    @include elevation.elevation(4);
     @include top-app-bar.fill-color-accessible(
       util.map-deep-get(palette.$palette, red, 500)
     );

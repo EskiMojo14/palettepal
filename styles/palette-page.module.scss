@@ -1,9 +1,11 @@
+@use "@material/elevation";
+
 .container {
   height: 100vh;
   display: flex;
   flex-direction: column;
   .app-bar {
-    position: static;
+    @include elevation.elevation(4);
   }
   .palette-grid {
     flex: 1 1;

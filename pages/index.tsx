@@ -24,6 +24,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SimpleTopAppBar
+        fixed
         className={styles["app-bar"]}
         title="PalettePal"
         actionItems={[
@@ -34,14 +35,14 @@ const Home: NextPage = () => {
           },
         ]}
       />
-      <div className={styles["palette-grid"]}>
+      <TopAppBarFixedAdjust className={styles["palette-grid"]}>
         {Object.keys(palette).map((color, index) => (
           <Fragment key={color}>
             {index === 2 && <WBPaletteCard />}
             <PaletteCard {...{ color, showPalette }} />
           </Fragment>
         ))}
-      </div>
+      </TopAppBarFixedAdjust>
     </div>
   );
 };
