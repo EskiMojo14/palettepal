@@ -1,4 +1,5 @@
 import {
+  SimpleTopAppBar,
   TopAppBar,
   TopAppBarFixedAdjust,
   TopAppBarRow,
@@ -21,13 +22,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Material Design Palette" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <TopAppBar className={styles["app-bar"]}>
-        <TopAppBarRow>
-          <TopAppBarSection alignStart>
-            <TopAppBarTitle>PalettePal</TopAppBarTitle>
-          </TopAppBarSection>
-        </TopAppBarRow>
-      </TopAppBar>
+      <SimpleTopAppBar className={styles["app-bar"]} title="PalettePal" />
       <div className={styles["palette-grid"]}>
         {Object.keys(palette).map((color, index) => (
           <Fragment key={color}>
