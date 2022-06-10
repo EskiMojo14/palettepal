@@ -1,5 +1,35 @@
-.palette-grid {
+@use "@material/animation";
+@use "@material/theme";
+@use "palette.module" as palette;
+@use "util";
+
+.container {
   height: 100vh;
-  display: grid;
-  grid-template: repeat(4, 1fr) / repeat(5, 1fr);
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .app-bar {
+    position: static;
+    background-color: util.map-deep-get(palette.$palette, red, 500);
+    animation: animation.standard(rainbow, 3000ms * length(palette.$palette))
+      infinite;
+  }
+  .palette-grid {
+    flex: 1 1;
+    min-height: 0;
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(5, 1fr);
+  }
+}
+
+@keyframes rainbow {
+  @each $color, $shades in palette.$palette {
+    $i: index(palette.$palette, $color $shades);
+    $percent: 0% + ((($i - 1) / length(palette.$palette)) * 100);
+    #{$percent} {
+      $ink-color: theme.accessible-ink-color(map-get($shades, 500));
+      background-color: map-get($shades, 500);
+      color: $ink-color;
+    }
+  }
 }
