@@ -294,3 +294,11 @@ $palette: (
     900: color-palette.$blue-grey-900,
   ),
 );
+
+:export {
+  @each $color, $shades in $palette {
+    @each $shade, $value in $shades {
+      #{$color}__#{$shade}: $value;
+    }
+  }
+}

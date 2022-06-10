@@ -1,6 +1,6 @@
 @use "typography-variables";
 @use "util";
-@use "palette";
+@use "palette.module" as palette;
 
 .container {
   padding: 0 2rem;
