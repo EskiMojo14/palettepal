@@ -12,7 +12,7 @@ import Link from "next/link";
 import palette, { Palette, paletteNames } from "../../src/palette";
 import styles from "../../styles/palette-page.module.scss";
 import { CSSProperties, useMemo } from "react";
-import { PaletteCard } from "../../src/components/palette/palette-card";
+import { SwatchStrip } from "../../src/components/palette/swatch-strip";
 
 export const getStaticProps: GetStaticProps = (ctx) => ({
   props: { color: ctx.params?.color },
@@ -52,7 +52,7 @@ export const PaletteDisplay = ({ color }: PaletteDisplayProps) => {
         style={{ "--grid-rows": shades.length } as CSSProperties}
       >
         {shades.map((shade) => (
-          <PaletteCard key={shade} horizontal {...{ color, shade }} />
+          <SwatchStrip key={shade} {...{ color, shade }} />
         ))}
       </TopAppBarFixedAdjust>
     </div>

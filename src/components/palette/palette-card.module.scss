@@ -1,6 +1,5 @@
 @use "@material/animation";
 @use "@material/elevation";
-@use "@material/ripple";
 @use "@material/rtl";
 @use "styles/typography-variables";
 @use "styles/util";
@@ -50,11 +49,6 @@
     .overline {
       font-feature-settings: "tnum";
       opacity: 0.6;
-    }
-
-    &.horizontal {
-      flex-direction: row;
-      align-items: center;
     }
   }
 
