@@ -41,7 +41,7 @@ export const PaletteDisplay = ({ color }: PaletteDisplayProps) => {
         <TopAppBarRow>
           <TopAppBarSection alignStart>
             <Link href="/">
-              <TopAppBarNavigationIcon icon="arrow_back" />
+              <TopAppBarNavigationIcon className={styles["nav-icon"]} icon="arrow_back" />
             </Link>
             <TopAppBarTitle>PalettePal: {paletteNames[color]}</TopAppBarTitle>
           </TopAppBarSection>

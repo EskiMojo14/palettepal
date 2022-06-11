@@ -1,4 +1,7 @@
 @use "@material/elevation";
+@use "@material/ripple";
+@use "@material/theme";
+@use "palette.module" as palette;
 
 .container {
   height: 100vh;
@@ -13,4 +16,12 @@
     display: grid;
     grid-template-rows: repeat(var(--grid-rows, 10), 1fr);
   }
+}
+
+@each $color, $shades in palette.$palette {
+    .app-bar:global(.#{$color}-500) .nav-icon {
+      $ink-color: theme.accessible-ink-color(map-get($shades, 500));
+      color: $ink-color;
+      @include ripple.states($ink-color)
+    }
 }
