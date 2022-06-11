@@ -17,44 +17,44 @@ export const PaletteCard = ({
   horizontal,
 }: PaletteCardProps) => (
   <Link href={`/palette/${color}`}>
-    <div className={`${styles["palette-card"]} ${color}-${shade ?? 500}`}>
-      <div
-        className={`${styles["text-row"]} ${
-          horizontal ? styles.horizontal : ""
-        }`}
-      >
-        {shade && (
-          <Typography use="subtitle1" className={styles.title}>
-            {`${shade}`.toUpperCase()}
+    <div className={styles["palette-card-container"]}>
+      <div className={`${styles["palette-card"]} ${color}-${shade ?? 500}`}>
+        <div
+          className={`${styles["text-row"]} ${horizontal ? styles.horizontal : ""
+            }`}
+        >
+          {shade && (
+            <Typography use="subtitle1" className={styles.title}>
+              {`${shade}`.toUpperCase()}
+            </Typography>
+          )}
+          <Typography use="overline" className={styles.overline}>
+            {palette[color][shade ?? 500]}
           </Typography>
-        )}
-        <Typography use="overline" className={styles.overline}>
-          {palette[color][shade ?? 500]}
-        </Typography>
+          {!shade && (
+            <Typography use="headline6" className={styles.title}>
+              {paletteNames[color]}
+            </Typography>
+          )}
+        </div>
         {!shade && (
-          <Typography use="headline6" className={styles.title}>
-            {paletteNames[color]}
-          </Typography>
+          <div
+            className={`${styles["palette-row"]} ${showPalette ? styles.visible : ""
+              }`}
+          >
+            {Object.keys(palette[color] ?? {}).map((shade) => (
+              <div key={shade} className={styles["palette-item"]}>
+                <Typography use="overline" className={styles.label}>
+                  {`${shade}`.toUpperCase()}
+                </Typography>
+                <div
+                  className={`${styles["palette-square"]} ${color}-${shade}`}
+                />
+              </div>
+            ))}
+          </div>
         )}
       </div>
-      {!shade && (
-        <div
-          className={`${styles["palette-row"]} ${
-            showPalette ? styles.visible : ""
-          }`}
-        >
-          {Object.keys(palette[color] ?? {}).map((shade) => (
-            <div key={shade} className={styles["palette-item"]}>
-              <Typography use="overline" className={styles.label}>
-                {`${shade}`.toUpperCase()}
-              </Typography>
-              <div
-                className={`${styles["palette-square"]} ${color}-${shade}`}
-              />
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   </Link>
 );
