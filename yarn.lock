@@ -60,6 +60,21 @@
   dependencies:
     "tslib" "^1.9.3"
 
+"@material/button@^8.0.0":
+  "integrity" "sha512-16s11brFwfpWvvJxMtOyUZ7J70TNclV37M4aRlQ1Cjxhk2IUQzeRSADpCl/NdNAZQHEIhrGl2oy21sQqaNhBKg=="
+  "resolved" "https://registry.npmjs.org/@material/button/-/button-8.0.0.tgz"
+  "version" "8.0.0"
+  dependencies:
+    "@material/density" "^8.0.0"
+    "@material/elevation" "^8.0.0"
+    "@material/feature-targeting" "^8.0.0"
+    "@material/ripple" "^8.0.0"
+    "@material/rtl" "^8.0.0"
+    "@material/shape" "^8.0.0"
+    "@material/theme" "^8.0.0"
+    "@material/touch-target" "^8.0.0"
+    "@material/typography" "^8.0.0"
+
 "@material/density@^8.0.0":
   "integrity" "sha512-44g0S8kZfVw02JfMCLQeYxbt143xiQvouR1mNKqC6+W+XhdBNS1IxKtk+kONiEIXVhb9JKnEp5zag+aC589RTw=="
   "resolved" "https://registry.npmjs.org/@material/density/-/density-8.0.0.tgz"
@@ -129,6 +144,25 @@
     "@material/rtl" "^8.0.0"
     "@material/theme" "^8.0.0"
 
+"@material/snackbar@^8.0.0":
+  "integrity" "sha512-VJA3C58o+b2PRpPsPrQ3dnS3S4L8NZ56Y9eEkOdaJ7mQUQqvYC3opYAT/MuawyGC9I7sUgscV7gHnYifm6JJHQ=="
+  "resolved" "https://registry.npmjs.org/@material/snackbar/-/snackbar-8.0.0.tgz"
+  "version" "8.0.0"
+  dependencies:
+    "@material/animation" "^8.0.0"
+    "@material/base" "^8.0.0"
+    "@material/button" "^8.0.0"
+    "@material/dom" "^8.0.0"
+    "@material/elevation" "^8.0.0"
+    "@material/feature-targeting" "^8.0.0"
+    "@material/icon-button" "^8.0.0"
+    "@material/ripple" "^8.0.0"
+    "@material/rtl" "^8.0.0"
+    "@material/shape" "^8.0.0"
+    "@material/theme" "^8.0.0"
+    "@material/typography" "^8.0.0"
+    "tslib" "^1.9.3"
+
 "@material/theme@^8.0.0":
   "integrity" "sha512-YcU4oi1pd9K8KfPfhZHD7GGnn034SoaVld5534eEnTMgpUn2y7KHZJlPCjrdh1tIy+PBvnYAkxBtx+mKWRCKFQ=="
   "resolved" "https://registry.npmjs.org/@material/theme/-/theme-8.0.0.tgz"
@@ -150,6 +184,14 @@
     "@material/theme" "^8.0.0"
     "@material/typography" "^8.0.0"
     "tslib" "^1.9.3"
+
+"@material/touch-target@^8.0.0":
+  "integrity" "sha512-vRaV8AYiZfN+90SxDrO38rmmwNrTQHwwWGViBWod2uedQLe+TisldKa0UlCBrVscuDMVO3cpDdsgVzzdpCHdxg=="
+  "resolved" "https://registry.npmjs.org/@material/touch-target/-/touch-target-8.0.0.tgz"
+  "version" "8.0.0"
+  dependencies:
+    "@material/base" "^8.0.0"
+    "@material/feature-targeting" "^8.0.0"
 
 "@material/typography@^8.0.0":
   "integrity" "sha512-1CKckX1JStAh4JvOGwyc3vJ8ggGJXBZJTZJDJNmXSyJeL8SkLdppeTjr02zN09VNrVehS41ArhScPF0zl0rMzQ=="
@@ -210,6 +252,18 @@
     "mutation-observer" "^1.0.3"
     "tslib" "^2.3.0"
 
+"@rmwc/button@^8.0.0":
+  "integrity" "sha512-Om2KYL3solVVYg19RZMn99K/peVLpxDroJE1rA1XL6AtR54O/mkgY37nEhEy0eKEFyLzeaTumQsafK/DKB7wxQ=="
+  "resolved" "https://registry.npmjs.org/@rmwc/button/-/button-8.0.0.tgz"
+  "version" "8.0.0"
+  dependencies:
+    "@material/button" "^8.0.0"
+    "@rmwc/base" "^8.0.0"
+    "@rmwc/icon" "^8.0.0"
+    "@rmwc/provider" "^8.0.0"
+    "@rmwc/ripple" "^8.0.0"
+    "@rmwc/types" "^8.0.0"
+
 "@rmwc/icon-button@^8.0.0":
   "integrity" "sha512-tdz/Jc+PRlsBIn/NbaIRR3wwPy2zpEtPaW+6rxGRK9gf0snyq0x9D/JdBDrs7WNNvs+SZhMq6e8Sie4hnkRWtg=="
   "resolved" "https://registry.npmjs.org/@rmwc/icon-button/-/icon-button-8.0.0.tgz"
@@ -246,6 +300,18 @@
     "@material/ripple" "^8.0.0"
     "@rmwc/base" "^8.0.0"
     "@rmwc/provider" "^8.0.0"
+    "@rmwc/types" "^8.0.0"
+
+"@rmwc/snackbar@^8.0.0":
+  "integrity" "sha512-P4QLoNEXdfObNZTMfUFEWDSwXxnH6v1TUM8wZ4J7rIQQXJropMNks3k8YORORG5Rba1WlnK+QJUvZ76shgjiyA=="
+  "resolved" "https://registry.npmjs.org/@rmwc/snackbar/-/snackbar-8.0.0.tgz"
+  "version" "8.0.0"
+  dependencies:
+    "@material/snackbar" "^8.0.0"
+    "@rmwc/base" "^8.0.0"
+    "@rmwc/button" "^8.0.0"
+    "@rmwc/icon" "^8.0.0"
+    "@rmwc/icon-button" "^8.0.0"
     "@rmwc/types" "^8.0.0"
 
 "@rmwc/top-app-bar@^8.0.0":
