@@ -1,3 +1,4 @@
+import { Ripple } from "@rmwc/ripple";
 import { Typography } from "@rmwc/typography";
 import palette, { Palette } from "../../palette";
 import styles from "./swatch-strip.module.scss";
@@ -12,13 +13,15 @@ export const SwatchStrip = ({
     shade,
 }: SwatchStripProps) => (
     <div className={styles["swatch-strip-container"]}>
-        <div className={`${styles["swatch-strip"]} ${color}-${shade}`}>
-            <Typography use="subtitle1" className={styles.title}>
-                {`${shade}`.toUpperCase()}
-            </Typography>
-            <Typography use="overline" className={styles.overline}>
-                {palette[color][shade]}
-            </Typography>
-        </div>
+        <Ripple>
+            <div className={`${styles["swatch-strip"]} ${color}-${shade}`}>
+                <Typography use="subtitle1" className={styles.title}>
+                    {`${shade}`.toUpperCase()}
+                </Typography>
+                <Typography use="overline" className={styles.overline}>
+                    {palette[color][shade]}
+                </Typography>
+            </div>
+        </Ripple>
     </div>
 );
