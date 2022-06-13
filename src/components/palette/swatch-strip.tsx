@@ -1,3 +1,4 @@
+import { classNames } from "@rmwc/base";
 import { Ripple } from "@rmwc/ripple";
 import { Typography } from "@rmwc/typography";
 import palette, { Palette } from "../../palette";
@@ -20,7 +21,9 @@ export const SwatchStrip = ({ color, shade }: SwatchStripProps) => {
   return (
     <div className={styles["swatch-strip-container"]} onClick={copyToClipboard}>
       <Ripple>
-        <div className={`${styles["swatch-strip"]} ${color}-${shade}`}>
+        <div
+          className={classNames(styles["swatch-strip"], `${color}-${shade}`)}
+        >
           <Typography use="subtitle1" className={styles.title}>
             {`${shade}`.toUpperCase()}
           </Typography>

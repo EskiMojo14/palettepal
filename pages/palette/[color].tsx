@@ -1,3 +1,4 @@
+import { classNames } from "@rmwc/base";
 import {
   TopAppBar,
   TopAppBarFixedAdjust,
@@ -37,7 +38,10 @@ export const PaletteDisplay = ({ color }: PaletteDisplayProps) => {
       <Head>
         <title>PalettePal: {paletteNames[color]}</title>
       </Head>
-      <TopAppBar fixed className={`${styles["app-bar"]} ${color}-500`}>
+      <TopAppBar
+        fixed
+        className={classNames(styles["app-bar"], `${color}-500`)}
+      >
         <TopAppBarRow>
           <TopAppBarSection alignStart>
             <Link href="/">
