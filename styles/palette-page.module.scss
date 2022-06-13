@@ -19,9 +19,9 @@
 }
 
 @each $color, $shades in palette.$palette {
-    .app-bar:global(.#{$color}-500) .nav-icon {
-      $ink-color: theme.accessible-ink-color(map-get($shades, 500));
-      color: $ink-color;
-      @include ripple.states($ink-color)
-    }
+  .app-bar:global(.#{$color}-500) .nav-icon {
+    $ink-color: theme.accessible-ink-color(map-get($shades, 500));
+    color: $ink-color;
+    @include ripple.states($ink-color);
+  }
 }

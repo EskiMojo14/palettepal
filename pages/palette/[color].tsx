@@ -30,7 +30,7 @@ export type PaletteDisplayProps = {
 export const PaletteDisplay = ({ color }: PaletteDisplayProps) => {
   const shades = useMemo(
     () => Object.keys(palette[color] ?? {}) as (keyof Palette)[],
-    [color]
+    [color],
   );
   return (
     <div className={styles.container}>
@@ -41,7 +41,10 @@ export const PaletteDisplay = ({ color }: PaletteDisplayProps) => {
         <TopAppBarRow>
           <TopAppBarSection alignStart>
             <Link href="/">
-              <TopAppBarNavigationIcon className={styles["nav-icon"]} icon="arrow_back" />
+              <TopAppBarNavigationIcon
+                className={styles["nav-icon"]}
+                icon="arrow_back"
+              />
             </Link>
             <TopAppBarTitle>PalettePal: {paletteNames[color]}</TopAppBarTitle>
           </TopAppBarSection>

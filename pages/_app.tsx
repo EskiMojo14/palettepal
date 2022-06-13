@@ -4,7 +4,12 @@ import { SnackbarQueue } from "@rmwc/snackbar";
 import { messages } from "../src/snackbar-queue";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <><Component {...pageProps} /><SnackbarQueue messages={messages} /></>;
+  return (
+    <>
+      <Component {...pageProps} />
+      <SnackbarQueue messages={messages} />
+    </>
+  );
 }
 
 export default MyApp;
