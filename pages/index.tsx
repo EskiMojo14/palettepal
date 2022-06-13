@@ -38,8 +38,13 @@ const Home: NextPage = () => {
       <TopAppBarFixedAdjust className={styles["palette-grid"]}>
         {Object.keys(palette).map((color, index) => (
           <Fragment key={color}>
-            {index === 2 && <WBPaletteCard />}
-            <PaletteCard {...{ color, showPalette }} />
+            {index === 2 && (
+              <WBPaletteCard className={styles["palette-card"]} />
+            )}
+            <PaletteCard
+              className={styles["palette-card"]}
+              {...{ color, showPalette }}
+            />
           </Fragment>
         ))}
       </TopAppBarFixedAdjust>

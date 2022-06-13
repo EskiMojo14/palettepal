@@ -1,8 +1,12 @@
 import { Typography } from "@rmwc/typography";
 import styles from "./palette-card.module.scss";
 
-export const WBPaletteCard = () => (
-  <div className={`${styles["palette-card"]} ${styles.wb}`}>
+export type WBPaletteCardProps = {
+  className: string;
+};
+
+export const WBPaletteCard = ({ className }: WBPaletteCardProps) => (
+  <div className={`${styles["palette-card"]} ${styles.wb} ${className}`}>
     <div className={`${styles.half} black`}>
       <Typography use="overline" className={styles.subtitle}>
         #000

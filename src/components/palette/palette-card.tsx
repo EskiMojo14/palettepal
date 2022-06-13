@@ -1,25 +1,25 @@
 import { Ripple } from "@rmwc/ripple";
 import { Typography } from "@rmwc/typography";
 import Link from "next/link";
-import { Palette, palette, paletteNames } from "../../palette";
+import { palette, paletteNames } from "../../palette";
 import styles from "./palette-card.module.scss";
 
 export type PaletteCardProps = {
   color: string;
   showPalette?: boolean;
+  className?: string;
 };
 
 export const PaletteCard = ({
   color,
   showPalette,
+  className,
 }: PaletteCardProps) => (
   <Link href={`/palette/${color}`}>
-    <div className={styles["palette-card-container"]}>
+    <div className={`${styles["palette-card-container"]} ${className}`}>
       <Ripple>
         <div className={`${styles["palette-card"]} ${color}-500`}>
-          <div
-            className={styles["text-row"]}
-          >
+          <div className={styles["text-row"]}>
             <Typography use="overline" className={styles.overline}>
               {palette[color][500]}
             </Typography>
@@ -28,8 +28,9 @@ export const PaletteCard = ({
             </Typography>
           </div>
           <div
-            className={`${styles["palette-row"]} ${showPalette ? styles.visible : ""
-              }`}
+            className={`${styles["palette-row"]} ${
+              showPalette ? styles.visible : ""
+            }`}
           >
             {Object.keys(palette[color] ?? {}).map((shade) => (
               <div key={shade} className={styles["palette-item"]}>

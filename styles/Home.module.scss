@@ -6,6 +6,17 @@
 @use "palette.module" as palette;
 @use "util";
 
+@mixin grid-card($rows, $columns, $min: true) {
+  .palette-card {
+    @if ($min) {
+      min-height: 100% / $rows;
+    } @else {
+      height: 100% / $rows;
+    }
+    width: 100% / $columns;
+  }
+}
+
 .container {
   height: 100vh;
   max-height: 100vh;
@@ -34,16 +45,21 @@
   .palette-grid {
     flex: 1 1;
     min-height: 0;
-    display: grid;
-    grid-template: repeat(4, 1fr) / repeat(5, 1fr);
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    @include grid-card(4, 5, false);
     @media (max-width: 900px) {
-      grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+      height: auto;
+      max-height: none;
+      @include grid-card(5, 4);
     }
     @media (max-width: 640px) {
-      grid-template: repeat(10, 1fr) / repeat(2, 1fr);
+      @include grid-card(10, 2);
     }
     @media (max-width: 360px) {
-      grid-template: repeat(20, 1fr) / repeat(1, 1fr);
+      @include grid-card(20, 1);
     }
   }
 }
